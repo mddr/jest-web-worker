@@ -25,6 +25,9 @@
     "jest-web-worker-e2e": {
       "tags": [],
       "implicitDependencies": ["jest-web-worker"]
+    },
+    "web-workers": {
+      "tags": []
     }
   }
 }

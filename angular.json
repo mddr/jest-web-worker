@@ -51,7 +51,8 @@
               "apps/jest-web-worker/src/assets"
             ],
             "styles": ["apps/jest-web-worker/src/styles.css"],
-            "scripts": []
+            "scripts": [],
+            "webWorkerTsConfig": "apps/jest-web-worker/tsconfig.worker.json"
           },
           "configurations": {
             "production": {
@@ -145,6 +146,31 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/jest-web-worker-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "web-workers": {
+      "projectType": "library",
+      "root": "libs/web-workers",
+      "sourceRoot": "libs/web-workers/src",
+      "prefix": "jest-web-worker",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web-workers"],
+          "options": {
+            "jestConfig": "libs/web-workers/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web-workers/src/**/*.ts",
+              "libs/web-workers/src/**/*.html"
+            ]
           }
         }
       }
